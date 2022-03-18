@@ -11,3 +11,4 @@ The toy language supports multiple Java features such as:
 
 The project also has a working GUI, which allows step by step execution of each
 available program.
+The GUI was created using the JavaFX library.
