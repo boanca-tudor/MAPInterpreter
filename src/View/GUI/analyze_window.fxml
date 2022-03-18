@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="View.GUI.AnalyzeWindowController"
+          prefHeight="400.0" prefWidth="600.0">
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <Label text="Program Count:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="tfProgramsCount" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <Label text="Symbol Table:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+    <TableView fx:id="tvSymbolTable" GridPane.columnIndex="3" GridPane.rowIndex="0">
+        <columns>
+            <TableColumn fx:id="colName" text="Name" />
+            <TableColumn fx:id="colSymbolValue" text="Value" />
+        </columns>
+    </TableView>
+    <Label text="Output:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <ListView fx:id="lvOut" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Label text="Heap Table:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+    <TableView fx:id="tvHeapTable" GridPane.columnIndex="3" GridPane.rowIndex="1">
+        <columns>
+            <TableColumn fx:id="colHeapAddress" text="Address" />
+            <TableColumn fx:id="colHeapValue" text="Value" />
+        </columns>
+    </TableView>
+
+    <Label text="File Table:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <ListView fx:id="lvFileTable" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <Label text="Program IDs:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <ListView fx:id="lvProgramIDs" onMouseClicked="#updateTables" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+    <Label text="Execution Stack:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <ListView fx:id="lvExecutionStack" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Button fx:id="btnRunOneStep" onMouseClicked="#executeOneStep" text="Execute one step" GridPane.columnIndex="2"
+            GridPane.columnSpan="2" GridPane.rowIndex="3" />
+</GridPane>
